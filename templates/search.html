@@ -1,0 +1,33 @@
+<doctype html>
+<title>Test App</title>
+<h2>Search Data</h2>
+<body>
+    <div class="container">
+
+      <form action="/results" method="post">
+          <label for="search">Search</label>
+          <input type="text" id="search" name="search" class="form-control" placeholder="Search here.." required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+<table border="1">
+{% if result %}
+	<h2>Search Result:</h2>
+<tr>
+	{% for r in result %}
+    	<td>{{ r.id }} </td><td>{{ r.username }} </td><td>{{ r.email }}  </td><td><a href="/edit/{{r.id}}" >Edit</a></td>
+</tr>
+	{% endfor %}
+    {% else %}
+<tr>
+    	<td><h2> Your search did not match any record..</h2></td>
+</tr>
+{% endif %}
+</table>
+<br>
+<a href="/">Go back home</a></ br>
+</body>
+</html>

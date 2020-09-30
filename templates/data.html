@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Add your data</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" >
+
+
+  </head>
+
+  <body>
+    <br>
+    <br>
+
+    <div class="container">
+
+      <form action="/add" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" class="form-control" placeholder="Add username here.." required autofocus>
+        </div>
+        <div class="form-group">
+          <label for="email" >Email</label>
+             <input type="text" id="email" name="email" class="form-control"  placeholder="Add email here.." required autofocus>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit  Your Data</button>
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

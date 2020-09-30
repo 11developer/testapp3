@@ -1,0 +1,51 @@
+<doctype html>
+<title>Test App</title>
+<h2>Manage Data</h2>
+<body>
+<a href="/">Home</a></ br>
+<table border="1">
+
+                    <tr>
+
+			<th>ID</th>  
+			<th>Username</th>  
+			<th>Email</th>  
+			<th>Timestamp</th>
+			<th>Action</th>
+
+                    </tr>
+
+
+                   {% for presult in all_data.items %}  
+                    <tr>
+			<td>{{presult.id}}</td>  
+			<td>{{presult.username}}</td>  
+			<td>{{presult.email}}</td>
+			<td>{{presult.timestamp}}</td> 
+
+                        <td>
+                            <a href="/edit/{{presult.id}}" >Edit</a>
+                            <a href="/delete/{{presult.id}}">Delete</a>
+
+
+                        </td>
+
+                    </tr>
+  {% endfor %}
+
+
+</table>
+
+{% for page in all_data.iter_pages() %}
+
+{% if page %}
+<a href="{{ url_for('pages', page_num=page) }}">{{ page }}</a>
+{% else %}
+...
+{% endif %}
+
+{% endfor %}
+<br><br>  
+
+</body>
+</html>

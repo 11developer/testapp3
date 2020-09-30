@@ -1,0 +1,40 @@
+<doctype html>
+<title>Test App</title>
+<h2>Manage Data</h2>
+<body>
+<a href="/">Home</a></ br>
+<table border="1">
+
+                    <tr>
+
+			<th>ID</th>  
+			<th>Username</th>  
+			<th>Email</th>  
+			<th>Timestamp</th>
+			<th>Action</th>
+
+                    </tr>
+
+
+                   {% for result in results %}
+                    <tr>
+			<td>{{result.id}}</td>  
+			<td>{{result.username}}</td>  
+			<td>{{result.email}}</td>
+			<td>{{result.timestamp}}</td> 
+
+                        <td>
+                            <a href="/edit/{{result.id}}" >Edit</a>
+                            <a href="/delete/{{result.id}}">Delete</a>
+
+
+                        </td>
+
+                    </tr>
+  {% endfor %}
+
+
+                </table>
+
+</body>
+</html>

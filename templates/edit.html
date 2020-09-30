@@ -1,0 +1,16 @@
+<html>
+<title>Test App</title>
+<body>
+<h2>Edit Data</h2>
+<form method="post" action="{{url_for('update')}}">
+<table border="1">
+<tr><th>Username:</th><td>
+<input type="text" name="username" value="{{result.username}}"></td> </tr>
+<tr><th>Email:</th><td>
+<input type="text" name="email" value="{{result.email}}"></td> </tr>
+</table>
+<input name="id" value="{{result.id}}" type="hidden">
+<input type="submit" value="Update">
+</form>
+</body>
+</html>
