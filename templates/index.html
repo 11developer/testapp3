@@ -13,7 +13,11 @@
 
   <body>
     <nav style="margin-top:25px;margin-left:45px">
-      <a class="btn btn-primary" href="{{ url_for('form') }}">Add data</a><a class="btn btn-primary" href="{{ url_for('table') }}">Table View</a><a class="btn btn-primary" href="{{ url_for('get_data') }}">API</a>
+      <a class="btn btn-primary" href="{{ url_for('form') }}">Add data</a>
+      <a class="btn btn-primary" href="{{ url_for('table') }}">Table View</a>
+      <a class="btn btn-primary" href="{{ url_for('get_data') }}">API</a>
+      <a class="btn btn-primary" href="{{ url_for('pages',page_num=1) }}">Pages</a>
+      <a class="btn btn-primary" href="{{ url_for('search') }}">Search</a>
     </nav>
     <br>
 
